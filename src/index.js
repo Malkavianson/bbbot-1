@@ -20,7 +20,8 @@ if (!parameters) {
   // console.log('\x1b[35m', logoAscii);
 
   const { runLogin, vote, listenEvents } = createPages(parameters);
-  runLogin(page);
+  runLogin(page, parameters.fix);
   vote(page);
-  listenEvents(page, browser);
+
+  listenEvents(page, browser, parameters.mode);
 })();
